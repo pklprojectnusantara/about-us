@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <!-- Tempatkan URL foto Anda pada atribut src di bawah ini -->
+            <img src="" alt="Foto Profil" class="foto-profil">
+            <div class="teks-header">
+                <h1>Profil Mahasiswa</h1>
+                <p></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="tampilkanKonten('biodata', this)" class="menu-aktif">Biodata</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pendidikan', this)">Pendidikan</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pengalaman', this)">Pengalaman</a></li>
+                <li><a href="#" onclick="tampilkanKonten('keahlian', this)">Keahlian</a></li>
+                <li><a href="#" onclick="tampilkanKonten('publikasi', this)">Publikasi</a></li>
+            </ul>
+        </nav>
+
+        <section id="konten-utama">
+            <!-- Konten Biodata (Default Tampil) -->
+            <div id="biodata" class="konten aktif">
+                <h2>👤 Biodata</h2>
+                <hr>
+                <div class="isi-konten">
+                    <p><strong>NIM:</strong></p>
+                    <p><strong>Nama:</strong></p>
+                    <p><strong>Agama:</strong></p>
+                    <p><strong>Tanggal Lahir:</strong></p>
+                    <p><strong>Tempat Lahir:</strong></p>
+                </div>
+            </div>
+
+            <!-- Konten Pendidikan -->
+            <div id="pendidikan" class="konten">
+                <h2>🎓 Pendidikan</h2>
+                <hr>
+                <div class="isi-konten">
+                    <ul>
+                        <li><strong>S1:</strong></li>
+                        <li><strong>S2:</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Konten Pengalaman -->
+            <div id="pengalaman" class="konten">
+                <h2>💼 Pengalaman</h2>
+                <hr>
+                <div class="isi-konten">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Konten Keahlian -->
+            <div id="keahlian" class="konten">
+                <h2>🛠️ Keahlian</h2>
+                <hr>
+                <div class="isi-konten">
+                    <ul>
+                        <li>Front-end: HTML5, CSS3, JavaScript, React</li>
+                        <li>Back-end: PHP</li>
+                        <li>Database: MySQL, PostgreSQL, MongoDB</li>
+                        <li>UI/UX: Figma, Adobe XD</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Konten Publikasi -->
+            <div id="publikasi" class="konten">
+                <h2>📚 Publikasi</h2>
+                <hr>
+                <div class="isi-konten">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <aside>
+            <h2>🎯 Hobi</h2>
+            <hr>
+            <ul>
+                <li>🏸 Main musik</li>
+                <li>⚽ Bola</li>
+                <li>💻 Pemrograman</li>
+                <li>📖 Membaca Buku Teknologi</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <p>Instagram: <span>@akun_ig</span></p>
+        </div>
+        <div class="footer-center">
+            <p>&copy; Copyright 2026. All Rights Reserved</p>
+        </div>
+        <div class="footer-right">
+            <h3>Profil Mahasiswa</h3>
+        </div>
+    </footer>
+
+    <!-- Script untuk navigasi dinamis -->
+    <script>
+        function tampilkanKonten(idKonten, elemenKlik) {
+            // Sembunyikan semua elemen konten
+            let semuaKonten = document.querySelectorAll('.konten');
+            semuaKonten.forEach(function(elemen) {
+                elemen.classList.remove('aktif');
+            });
+
+            // Tampilkan elemen yang dipilih
+            let kontenAktif = document.getElementById(idKonten);
+            if(kontenAktif) {
+                kontenAktif.classList.add('aktif');
+            }
+
+            // Hapus class 'menu-aktif' dari semua link navigasi
+            let semuaLink = document.querySelectorAll('nav a');
+            semuaLink.forEach(function(link) {
+                link.classList.remove('menu-aktif');
+            });
+
+            // Tambahkan class 'menu-aktif' pada link yang diklik
+            elemenKlik.classList.add('menu-aktif');
+        }
+    </script>
+</body>
+</html>
